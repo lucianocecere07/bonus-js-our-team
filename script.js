@@ -53,13 +53,32 @@ for(let i = 0; i < arrayTeam.length; i++){
     stampaArray(membro);
 };
 
+/*
 //Milestone 2: Stampare le informazioni su HTML
-for(let i = 0; i < arrayTeam.length; i++){
+
+//creo contenitore con id
+let contenitore = document.getElementById("contenitore-membri");
+
+for (let i = 0; i < arrayTeam.length; i++) {
     let membro = arrayTeam[i];
-    //da oggetti in array a stringhe
-    let membroDom = JSON.stringify(membro);
-    stampaStringaArrayInDOM(membroDom);
+    contenitore.innerHTML += getHTMLMember(membro);
 };
+*/
+
+document.getElementById("card-title1").innerHTML = arrayTeam[0].nome;
+document.getElementById("card-title2").innerHTML = arrayTeam[1].nome;
+document.getElementById("card-title3").innerHTML = arrayTeam[2].nome;
+document.getElementById("card-title4").innerHTML = arrayTeam[3].nome;
+document.getElementById("card-title5").innerHTML = arrayTeam[4].nome;
+document.getElementById("card-title6").innerHTML = arrayTeam[5].nome;
+
+document.getElementById("card-text1").innerHTML = arrayTeam[0].ruolo;
+document.getElementById("card-text2").innerHTML = arrayTeam[1].ruolo;
+document.getElementById("card-text3").innerHTML = arrayTeam[2].ruolo;
+document.getElementById("card-text4").innerHTML = arrayTeam[3].ruolo;
+document.getElementById("card-text5").innerHTML = arrayTeam[4].ruolo;
+document.getElementById("card-text6").innerHTML = arrayTeam[5].ruolo;
+
 
 //------------------------------------------------------------//
 
@@ -67,6 +86,7 @@ for(let i = 0; i < arrayTeam.length; i++){
 
 //-------------------------FUNZIONI--------------------------//
 
+//stampa in console
 function stampaArray(arrayTeam) {
     console.log(
         `
@@ -78,21 +98,21 @@ function stampaArray(arrayTeam) {
     )
 };
 
+/*
+//funzione valore proprietà membro
+function getHTMLMember(member) {
+    //variabile con proprietà oggetto
+    let result = ` 
+    <li> 
+    MEMBRO DEL TEAM: 
+    <br> nome: ${member.nome} 
+    <br> ruolo: ${member.ruolo} 
+    <br> foto: ${member.foto}
+    </li>
+    `;
 
-function stampaStringaArrayInDOM(arrayTeam) {
-    document.getElementById("lista-membri").innerHTML += "<li>" + arrayTeam + "</li>";
-};
-
-//----------------------------------------------------------//
-
-
-
-
-
-
-/* stampa in console le chiavi e i valori di un oggetto nell'array
-for(let chiave in arrayTeam){
-    console.log(chiave);
-    console.log(arrayTeam[chiave]);
+    return result;
 };
 */
+
+//----------------------------------------------------------//
