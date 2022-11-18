@@ -13,37 +13,37 @@ let arrayTeam = [
     {
         nome: "Wayne Barnett",
         ruolo: "Founder & CEO",
-        foto: "wayne-barnett-founder-ceo.jpg"
+        foto: "./img (3)/img/wayne-barnett-founder-ceo.jpg" //path dell'immagine
     },
     
     {
         nome: "Angela Caroll",
         ruolo: "Chief Editor",
-        foto: "angela-caroll-chief-editor.jpg"
+        foto: "./img (3)/img/angela-caroll-chief-editor.jpg"
     },
 
     {
         nome: "Walter Gordon",
         ruolo: "Office Manager",
-        foto: "walter-gordon-office-manager.jpg"
+        foto: "./img (3)/img/walter-gordon-office-manager.jpg"
     },
 
     {
         nome: "Angela Lopez",
         ruolo: "Social Media Manager",
-        foto: "angela-lopez-social-media-manager.jpg"
+        foto: "./img (3)/img/angela-lopez-social-media-manager.jpg"
     },
 
     {
         nome: "Scott Estrada",
         ruolo: "Developer",
-        foto: "scott-estrada-developer.jpg"
+        foto: "./img (3)/img/scott-estrada-developer.jpg"
     },
 
     {
         nome: "Barbara Ramos",
         ruolo: "Graphic Designer",
-        foto: "barbara-ramos-graphic-designer.jpg"
+        foto: "./img (3)/img/barbara-ramos-graphic-designer.jpg"
     }
 ];
 
@@ -53,18 +53,39 @@ for(let i = 0; i < arrayTeam.length; i++){
     stampaArray(membro);
 };
 
-/*
+
 //Milestone 2: Stampare le informazioni su HTML
 
 //creo contenitore con id
 let contenitore = document.getElementById("contenitore-membri");
 
-for (let i = 0; i < arrayTeam.length; i++) {
-    let membro = arrayTeam[i];
-    contenitore.innerHTML += getHTMLMember(membro);
-};
+
+/* 
+BONUS 1:
+Trasformare la stringa foto in una immagine effettiva
+BONUS 2:
+Organizzare i singoli membri in card/schede (BOOTSTRAP!) 
 */
 
+for (let i = 0; i < arrayTeam.length; i++) {
+    let membro = arrayTeam[i];
+    contenitore.innerHTML += /*getHTMLMember(membro);*/
+    `
+          <div class="col-12 col-md-6 col-xl-4">
+            <div class="card border border-1">
+              <img src="${membro.foto}" class="card-img-top" alt="wayne">
+              <div class="card-body">
+                <h5 id="card-title1" class="card-title">${membro.nome}</h5>
+                <p id="card-text1" class="card-text">${membro.ruolo}</p>
+              </div>
+            </div>
+          </div>
+          `
+    //template literal della card
+};
+
+
+/*
 document.getElementById("card-title1").innerHTML = arrayTeam[0].nome;
 document.getElementById("card-title2").innerHTML = arrayTeam[1].nome;
 document.getElementById("card-title3").innerHTML = arrayTeam[2].nome;
@@ -78,7 +99,7 @@ document.getElementById("card-text3").innerHTML = arrayTeam[2].ruolo;
 document.getElementById("card-text4").innerHTML = arrayTeam[3].ruolo;
 document.getElementById("card-text5").innerHTML = arrayTeam[4].ruolo;
 document.getElementById("card-text6").innerHTML = arrayTeam[5].ruolo;
-
+*/
 
 //------------------------------------------------------------//
 
